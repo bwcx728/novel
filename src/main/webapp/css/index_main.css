@@ -1,0 +1,85 @@
+.main{
+	width: 100%;
+}
+.items{
+	font-size: 20px;
+	background: #F5F5F5;
+	border: 3px solid #C3DFEA;;
+	height: 450px;
+	width: 78%;
+	float: left;	
+}
+.item{
+	margin: 20px 15px 0px !important;
+	width: 400px;
+	height: 200px;
+	display:inline-block ;
+	margin:20px;
+}
+.cover,.small{
+	float: left;			
+	box-sizing:border-box ;
+}
+.cover{
+	width: 15%;
+}
+.cover>a{
+	width: 130px;
+	height: 180px;
+}
+.cover>a>img{
+	margin: 2px;
+	width: 130px;
+	height: 180px;
+}
+.small{
+	padding-left:80px;
+	width: 80%;
+	line-height: 30px;
+}
+.small_top a{
+	text-decoration: none;
+}
+.small_top span{
+	color:gray;
+	font-size:15px;
+	float: right;
+	
+	
+}
+.small_bottom{
+	padding-top: 10px;
+	font-size: 16px;
+	overflow: hidden ;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 4;
+	-webkit-box-orient: vertical;
+}
+.items_right{
+	background: #F5F5F5;
+	border: 3px solid #C3DFEA;
+	height: 450px;
+	float: right;
+	width: 20%;
+	position: relative;
+}
+.icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
+
+
+.items_right h4{
+	margin:0 !important;
+	padding: 5px;
+	background-color: #E1ECED;
+	border-bottom: 1px solid #DDD;
+	height: 30px;
+}
+.items_right .calendar{
+	width:100%;
+}

@@ -1,0 +1,21 @@
+/*分页按钮样式 */
+.pagenav{
+	margin-top:-10px !important;
+	margin-bottom:-15px !important;
+	float:right;
+}
+
+.footer{
+	height:30px;
+}
+.footer_link{
+		border-bottom: 2px solid #88C6E5;
+	    height: 25px;
+	    line-height: 25px;
+	    overflow: hidden;
+	    width: 92%;
+	    margin: 5px auto;
+}
+.footer_cont{
+	text-align: center;
+}

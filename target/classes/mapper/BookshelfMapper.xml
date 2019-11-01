@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.novel.mapper.BookshelfMapper">
+	<resultMap type="bookshelf" id="map1">
+		<id column="id" property="id"></id>
+		<result column="bname" property="name" />
+		<result column="uid" property="uid" />
+		<collection property="novelList" ofType="novel" select="findAllNovel" column="id" ></collection>
+	</resultMap>
+	<select id="findAllBookshelf" parameterType="int"
+		resultMap="map1">
+		select b.* from users u LEFT JOIN t_bookshelf b on b.uid=u.id 
+		where u.id=#{uid}
+	</select>
+	
+	<select id="findBookshelfByBid" 
+		resultMap="map1">
+		select b.* from users u LEFT JOIN t_bookshelf b on b.uid=u.id 
+		where u.id=#{uid} and b.id=#{bid}
+	</select>
+	
+	<resultMap type="novel" id="map2">
+		<id  column="nid" property="id" />
+		<result column="name" property="name" />
+		<result column="author" property="author" />
+		<result column="url" property="url" />
+		<result column="type" property="type" />
+		<result column="last_update_chapter"
+			property="lastUpdateChapter" />
+		<result column="last_update_chapter_url"
+			property="lastUpdateChapterUrl" />
+		<result column="last_update_time" property="lastUpdateTime" />
+		<result column="status" property="status" />
+		<result column="wordage" property="wordage" />
+		<result column="add_time" property="addTime" />
+		<result column="introduce" property="introduce" />
+		<result column="cover" property="cover" />
+	</resultMap>
+	<select id="findAllNovel" parameterType="int" resultMap="map2">
+		select n.id nid,n.name,n.author,n.url,n.type,n.last_update_chapter,n.last_update_chapter_url,n.last_update_time,n.status,n.wordage,n.add_time,n.introduce,n.cover
+		from t_bookshelf b LEFT JOIN t_nb nb on nb.bid=b.id LEFT JOIN t_novel n on n.id=nb.nid
+		where b.id=#{bid}
+	</select>
+	
+</mapper>

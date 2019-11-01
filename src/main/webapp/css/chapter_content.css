@@ -1,0 +1,143 @@
+.con_top #page_set {
+	float: right;
+	text-align: right;
+	height: 20px;
+	line-height: 20px;
+	padding-right: 5px;
+	padding-top: 10px;
+}
+
+.bookname {
+	border-bottom: 1px dashed #88C6E5;
+	line-height: 30px;
+	padding-top: 10px;
+	margin-bottom: 10px;
+}
+
+.bookname h1 {
+	font: 25px/35px 黑体;
+	padding-top: 10px;
+	text-align: center;
+}
+
+.bottem1 {
+	clear: both !important;
+	text-align: center;
+	width: 900px;
+	margin: 5px 0 5px 50px;
+}
+
+.bottem1 a,.bottem2 a{
+	color:#ffffff !important;
+}
+
+.lm {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	padding: 5px;
+}
+
+.box_con #content, .box_con #content div, .box_con #content a {
+	font-family: 方正启体简体, "Microsoft YaHei", 微软雅黑, 宋体;
+	font-size: 19pt;
+	letter-spacing: 0.25em;
+	line-height: 130%;
+	padding:10px 5px 10px 5px;
+	width: 95%;
+	margin: 0 auto;
+}
+
+.box_con #content p div img, .box_con #content p img, .imagecontent,
+	.divimage {
+	text-align: center;
+	margin: auto;
+}
+
+.reader_mark0 {
+	width: 30px;
+	height: 90px;
+	top: 50px;
+	position: fixed;
+	right: 5px;
+	_margin-top: 50px;
+	_position: absolute;
+	_bottom: auto;
+	_top: expression(eval(document.documentElement.scrollTop));
+}
+
+.reader_mark1 {
+	width: 30px;
+	height: 90px;
+	top: 50px;
+	position: fixed;
+	left: 5px;
+	_margin-top: 50px;
+	_position: absolute;
+	_bottom: auto;
+	_top: expression(eval(document.documentElement.scrollTop));
+}
+
+.reader_mark0 a {
+	width: 30px;
+	height: 90px;
+	display: block;
+	background-position: 0px -116px;
+}
+
+.reader_mark1 a {
+	width: 30px;
+	height: 90px;
+	display: block;
+	background-position: -30px -116px;
+}
+
+.content_read {
+	overflow: hidden;
+	width: 980px;
+	margin: 10px auto auto;
+}
+
+.bottem2 {
+	border-top: 1px dashed #88C6E5;
+	clear: both !important;
+	text-align: center;
+	width: 900px;
+	margin: auto 20px;
+	padding: 15px;
+}
+
+.bottem a, .bottem1 a, .bottem2 a {
+	font-size: 14px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+#bdshare {
+	padding: 5px 5px 5px 13%;
+}
+
+.listdht {
+	width: 964px;
+	border: 3px solid #C8D4E1;
+	padding: 3px 5px 3px 5px;
+	margin-top: 5px;
+	overflow: hidden;
+	border-radius: 10px;
+	font-size: 18px;
+	height: 30px;
+}
+
+.listdht_top {
+	text-align: left;
+	line-height: 30px;
+	height: 30px;
+}
+
+.listdht_top #bdshare {
+	float: right;
+	line-height: 20px;
+	padding-right: 20px;
+	padding-top: 2px;
+	text-align: right;
+}

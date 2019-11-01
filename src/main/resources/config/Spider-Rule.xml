@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--站点  -->
+<sites>
+	<site>
+		<title>顶点小说</title>
+		<charset>GBK</charset>
+		<url>http://www.23wx.cc</url>
+		<!-- 章节列表选择器 -->
+		<chapter-list-selector>#list dd a</chapter-list-selector>
+		<chapter-datail-title-selector>.bookname h1</chapter-datail-title-selector>
+		<chapter-datail-content-selector>#content</chapter-datail-content-selector>
+		<chapter-datail-prev-selector>.bottem2 a,1</chapter-datail-prev-selector>
+		<chapter-datail-next-selector>.bottem2 a,3</chapter-datail-next-selector>
+		<novel-selector>.grid tr</novel-selector>
+		<novel-pageCount-selector>.last</novel-pageCount-selector>
+		<novel-next-page-selector>#pagelink .next</novel-next-page-selector>
+		<novel-detail-type-selector>.con_top</novel-detail-type-selector>
+		<novel-detatil-cover-selector>#fmimg img</novel-detatil-cover-selector>
+		<novel-detatil-introduce-selector>#intro p</novel-detatil-introduce-selector>
+	</site>
+	
+	<site>
+		<title>笔趣阁</title>
+		<charset>UTF-8</charset>
+		<url>http://www.biquge.tw</url>
+		<chapter-list-selector>#list dd a</chapter-list-selector>
+		<chapter-datail-title-selector>.bookname h1</chapter-datail-title-selector>
+		<chapter-datail-content-selector>#content</chapter-datail-content-selector>
+		<chapter-datail-prev-selector>#pager_prev</chapter-datail-prev-selector>
+		<chapter-datail-next-selector>#pager_next</chapter-datail-next-selector>
+	</site>
+	<site>
+		<title>笔下文学</title>
+		<charset>UTF-8</charset>
+		<url>http://www.bxwx8.org</url>
+		<chapter-list-selector>#TabCss dd a</chapter-list-selector>
+		<chapter-datail-title-selector>#title</chapter-datail-title-selector>
+		<chapter-datail-content-selector>#content</chapter-datail-content-selector>
+		<chapter-datail-prev-selector>#footlink a,2</chapter-datail-prev-selector>
+		<chapter-datail-next-selector>#footlink a,4</chapter-datail-next-selector>
+		<novel-selector>.grid tr</novel-selector>
+		<novel-next-page-selector>#pagelink .next</novel-next-page-selector>
+	</site>
+	
+</sites>

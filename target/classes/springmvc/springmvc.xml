@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+    <!-- 扫描注解 -->
+    <context:component-scan base-package="com.novel.controller"></context:component-scan>
+    <!-- 注解驱动 -->
+    <mvc:annotation-driven></mvc:annotation-driven>
+     <!-- 以.html为后缀名访问，默认返回数据类型是 text/html， 所以要修改返回的数据类型 -->
+    <bean id="contentNegotiationManager" class="org.springframework.web.accept.ContentNegotiationManagerFactoryBean"> 
+        <property name="mediaTypes">  
+            <map>  
+                <entry key="html" value="application/json;charset=UTF-8"/> 
+            </map>  
+        </property> 
+    </bean>
+    <!-- 视图解析器 -->
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+    	<property name="prefix" value="/WEB-INF/page/"></property>
+    	<property name="suffix" value=".jsp"></property>
+    </bean> 
+   	<!-- Multipart解析器 -->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"> 
+    	<property name="defaultEncoding" value="utf-8"/>
+    	<!-- 最大文件大小，单位字节 -->
+    	<property name="maxUploadSize" value="100000"/> 
+    </bean>
+    <!-- 静态资源 -->
+    <mvc:resources location="/js/" mapping="/js/**"></mvc:resources>
+    <mvc:resources location="/css/" mapping="/css/**"></mvc:resources>
+    <mvc:resources location="/img/" mapping="/img/**"></mvc:resources>
+    <mvc:resources location="/images/" mapping="/images/**"></mvc:resources>
+    <mvc:resources location="/font/" mapping="/font/**"></mvc:resources>
+</beans>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.novel.mapper.NovelMapper">
+	<insert id="batchInsertNovel" parameterType="novel">
+		INSERT INTO t_novel
+		(name,author,url,type,last_update_chapter,last_update_chapter_url,
+		last_update_time,status,wordage,platform_id,introduce,cover)
+		VALUES
+		<foreach collection="novels" index="index" item="item"
+			separator=",">
+			(
+			#{item.name},#{item.author},#{item.url},#{item.type},#{item.lastUpdateChapter},#{item.lastUpdateChapterUrl},
+			#{item.lastUpdateTime},#{item.status},#{item.wordage},#{item.platformId},#{item.introduce},#{item.cover}
+			)
+		</foreach>
+	</insert>
+
+	<resultMap type="novel" id="map1">
+		<id column="id" property="id" />
+		<result column="name" property="name" />
+		<result column="author" property="author" />
+		<result column="url" property="url" />
+		<result column="type" property="type" />
+		<result column="last_update_chapter"
+			property="lastUpdateChapter" />
+		<result column="last_update_chapter_url"
+			property="lastUpdateChapterUrl" />
+		<result column="last_update_time" property="lastUpdateTime" />
+		<result column="status" property="status" />
+		<result column="wordage" property="wordage" />
+		<result column="add_time" property="addTime" />
+		<result column="introduce" property="introduce" />
+		<result column="cover" property="cover" />
+	</resultMap>
+	<select id="findAllNovel" resultMap="map1">
+		select * from t_novel
+	</select>
+	
+	<select id="findNovelByType" resultMap="map1" parameterType="java.lang.String">
+		select * from t_novel where type=#{type}
+	</select>
+
+	<select id="selByPageInfo" parameterType="pageInfo"
+		resultMap="map1">
+		select * from t_novel 
+		<where>
+			<if test="map!=null">
+				<if test="map.queryType != '' and map.queryType!=null">
+				and type=#{map.queryType}
+				</if>
+				<if test="map.fuzzyQuery != '' and map.fuzzyQuery!=null">
+					<!-- <bind name="pattern" value="'%'+map.fuzzyQuery+'%'" /> -->
+					and (author like #{map.fuzzyQuery} or name like #{map.fuzzyQuery})
+				</if>
+			</if>
+		</where>
+		limit #{pageStart},#{pageSize}
+	</select>
+	<select id="fuzzyQueryCount" parameterType="pageInfo" resultType="int">
+		select count(*) from t_novel
+		<where>
+			<if test="map.queryType != '' and map.queryType!=null">
+				and type=#{map.queryType}
+			</if>
+			<if test="map.fuzzyQuery != '' and map.fuzzyQuery!=null">
+				and (author like #{map.fuzzyQuery} or name like #{map.fuzzyQuery})
+			</if>
+		</where>
+	</select>
+	
+	
+	
+	<select id="findById" parameterType="int" resultMap="map1">
+		select *
+		from t_novel where id = #{id}
+	</select>
+
+
+	<delete id="batchDeleteNovel">
+		delete from t_novel where id in
+		<foreach collection="checkId" item="c" open="(" separator=","
+			close=")">
+			#{c}
+		</foreach>
+	</delete>
+</mapper>

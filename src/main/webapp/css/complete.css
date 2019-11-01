@@ -1,0 +1,19 @@
+.novelList table th {
+	letter-spacing: 5px;
+}
+
+.novelList table tbody tr {
+	background: #FFFFFF;
+}
+
+.novelList table tr td {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.novelList table a {
+	display: inline-block;
+	text-decoration: none;
+	color: #333;
+}
